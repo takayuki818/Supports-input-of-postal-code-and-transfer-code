@@ -1,0 +1,60 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "Sheet2"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Option Explicit
+Private Sub CommandButton1_Click()
+    UserForm1.Show
+End Sub
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Dim 文 As String
+    With Sheets("入力フォーム")
+        Select Case Target.Address
+            Case .Cells(6, 2).Address
+                .Cells(7, 2) = 本店コード検索(.Cells(6, 2))
+            Case .Cells(6, 3).Address
+                .Cells(7, 3) = 支店コード検索(.Cells(7, 2), .Cells(6, 3))
+        End Select
+    End With
+End Sub
+Function 本店コード検索(本店名 As String) As String
+    Dim 終行 As Long
+    With Sheets("金融機関コード")
+        終行 = .Cells(Rows.Count, 1).End(xlUp).Row
+        On Error Resume Next
+        本店コード検索 = WorksheetFunction.VLookup(本店名, .Cells(2, 1).Resize(終行 - 1, 2), 2, 0)
+        On Error GoTo 0
+    End With
+End Function
+Function 支店コード検索(本店コード As String, 支店名 As String) As String
+    Dim 終行 As Long
+    With Sheets("金融機関コード")
+        終行 = .Cells(Rows.Count, 4).End(xlUp).Row
+        On Error Resume Next
+        支店コード検索 = WorksheetFunction.VLookup(本店コード & "-" & 支店名, .Cells(2, 4).Resize(終行 - 1, 2), 2, 0)
+        On Error GoTo 0
+    End With
+End Function
+Sub 保護切替()
+    With ActiveSheet
+        Select Case .ProtectContents
+            Case True: .Unprotect: MsgBox "シート保護を解除しました"
+            Case False: .Protect: MsgBox "シートを保護しました"
+        End Select
+    End With
+End Sub
+Sub 入力クリア()
+    Dim セル As Variant
+    With Sheets("入力フォーム")
+        Application.EnableEvents = False
+        For Each セル In .UsedRange
+            If Not (セル.Locked) Then セル.MergeArea.ClearContents
+        Next
+        Application.EnableEvents = True
+    End With
+End Sub
