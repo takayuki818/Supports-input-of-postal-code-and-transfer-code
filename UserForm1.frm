@@ -55,10 +55,10 @@ Private Sub CommandButton1_Click()
         Exit Sub
     End If
     With Sheets("入力フォーム")
-        .Cells(2, 2) = TextBox1.Text
+        .Range("郵便番号") = TextBox1.Text
         Select Case InStr(ComboBox1.Text, "（")
-            Case Is > 0: .Cells(3, 2) = Left(ComboBox1.Text, InStr(ComboBox1.Text, "（") - 1)
-            Case Else: .Cells(3, 2) = ComboBox1.Text
+            Case Is > 0: .Range("住所上段") = Left(ComboBox1.Text, InStr(ComboBox1.Text, "（") - 1)
+            Case Else: .Range("住所上段") = ComboBox1.Text
         End Select
         Unload UserForm1
     End With

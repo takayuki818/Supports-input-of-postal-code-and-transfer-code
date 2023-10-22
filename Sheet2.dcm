@@ -15,10 +15,10 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     Dim 文 As String
     With Sheets("入力フォーム")
         Select Case Target.Address
-            Case .Cells(6, 2).Address
-                .Cells(7, 2) = 本店コード検索(.Cells(6, 2))
-            Case .Cells(6, 3).Address
-                .Cells(7, 3) = 支店コード検索(.Cells(7, 2), .Cells(6, 3))
+            Case .Range("本店名").Address
+                .Range("本店名コード") = 本店コード検索(.Range("本店名"))
+            Case .Range("支店名").Address
+                .Range("支店名コード") = 支店コード検索(.Range("本店名コード"), .Range("支店名"))
         End Select
     End With
 End Sub
