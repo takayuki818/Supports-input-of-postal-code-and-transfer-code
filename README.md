@@ -1,7 +1,6 @@
 # Supports-input-of-postal-code-and-transfer-code
 ## 郵便番号と金融機関コードの入力補助
-注意：サンプルファイル中の郵便番号と金融機関コードのリストは[こちらのサイト](https://www.post.japanpost.jp/zipcode/download.html)等から独自に入手したものです。  
-　　「内容に誤りが含まれる可能性がある」「最新情報ではない」等のリスクがあることにご留意ください。
+**注意：サンプルファイル中の郵便番号と金融機関コードのリストは、ある時点で[こちらのサイト](https://www.post.japanpost.jp/zipcode/download.html)等から独自に入手したものです。「内容に誤りが含まれる可能性がある」「最新情報ではない」等のリスクがあることにご留意ください。**
 ## 操作方法
 入力フォーム画面  
 ![入力フォームサンプル](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/e5229447-7b03-4b92-acda-f96d91bee1b2)
