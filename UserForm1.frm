@@ -6,7 +6,7 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm1
    ClientTop       =   468
    ClientWidth     =   5832
    OleObjectBlob   =   "UserForm1.frx":0000
-   StartUpPosition =   1  'ƒI[ƒi[ ƒtƒH[ƒ€‚Ì’†‰›
+   StartUpPosition =   1  'ã‚ªãƒ¼ãƒŠãƒ¼ ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸­å¤®
 End
 Attribute VB_Name = "UserForm1"
 Attribute VB_GlobalNameSpace = False
@@ -14,51 +14,51 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-'ƒhƒƒbƒvƒ_ƒEƒ“ƒŠƒXƒg‚ğì¬E•\¦
+'ãƒ‰ãƒ­ãƒƒãƒ—ãƒ€ã‚¦ãƒ³ãƒªã‚¹ãƒˆã‚’ä½œæˆãƒ»è¡¨ç¤º
 Private Sub ComboBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
-    Dim Is As Long, s As Long
-    Dim ”z—ñ()
-    With Sheets("—X•Ö”Ô†ˆê——")
-        Is = .Cells(Rows.Count, 1).End(xlUp).Row
-        ”z—ñ = .Cells(2, 1).Resize(Is - 1, 2).Value
+    Dim çµ‚è¡Œ As Long, è¡Œ As Long
+    Dim é…åˆ—()
+    With Sheets("éƒµä¾¿ç•ªå·ä¸€è¦§")
+        çµ‚è¡Œ = .Cells(Rows.Count, 1).End(xlUp).Row
+        é…åˆ— = .Cells(2, 1).Resize(çµ‚è¡Œ - 1, 1).Value
     End With
     With ComboBox1
         .MatchEntry = fmMatchEntryNone
         Select Case KeyCode
             Case 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
                 .Clear
-                For s = 1 To Is - 1
-                    If ”z—ñ(s, 1) Like ComboBox1.Text & "*" Then .AddItem ”z—ñ(s, 1)
+                For è¡Œ = 1 To çµ‚è¡Œ - 1
+                    If é…åˆ—(è¡Œ, 1) Like ComboBox1.Text & "*" Then .AddItem é…åˆ—(è¡Œ, 1)
                 Next
         End Select
     End With
     ComboBox1.DropDown
 End Sub
-'—X•Ö”Ô†‚ğŒŸõ‘ã“ü
+'éƒµä¾¿ç•ªå·ã‚’æ¤œç´¢ä»£å…¥
 Private Sub ComboBox1_Change()
-    Dim Is As Long, s As Long
-    Dim ”z—ñ()
-    With Sheets("—X•Ö”Ô†ˆê——")
-        Is = .Cells(Rows.Count, 1).End(xlUp).Row
-        ”z—ñ = .Cells(2, 1).Resize(Is - 1, 2).Value
+    Dim çµ‚è¡Œ As Long, è¡Œ As Long
+    Dim é…åˆ—()
+    With Sheets("éƒµä¾¿ç•ªå·ä¸€è¦§")
+        çµ‚è¡Œ = .Cells(Rows.Count, 1).End(xlUp).Row
+        é…åˆ— = .Cells(2, 1).Resize(çµ‚è¡Œ - 1, 2).Value
     End With
     With TextBox1
-        For s = 1 To Is - 1
-            If ComboBox1.Text = ”z—ñ(s, 1) Then .Text = ”z—ñ(s, 2)
+        For è¡Œ = 1 To çµ‚è¡Œ - 1
+            If ComboBox1.Text = é…åˆ—(è¡Œ, 1) Then .Text = é…åˆ—(è¡Œ, 2)
         Next
     End With
 End Sub
-'“ü—ÍƒtƒH[ƒ€‚Ö‘ã“ü
+'å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã¸ä»£å…¥
 Private Sub CommandButton1_Click()
     If TextBox1.Text = "" Then
-        MsgBox "•s³‚ÈZŠ‚Å‚·"
+        MsgBox "ä¸æ­£ãªä½æ‰€ã§ã™"
         Exit Sub
     End If
-    With Sheets("“ü—ÍƒtƒH[ƒ€")
-        .Range("—X•Ö”Ô†") = TextBox1.Text
-        Select Case InStr(ComboBox1.Text, "i")
-            Case Is > 0: .Range("ZŠã’i") = Left(ComboBox1.Text, InStr(ComboBox1.Text, "i") - 1)
-            Case Else: .Range("ZŠã’i") = ComboBox1.Text
+    With Sheets("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ")
+        .Range("éƒµä¾¿ç•ªå·") = TextBox1.Text
+        Select Case InStr(ComboBox1.Text, "ï¼ˆ")
+            Case Is > 0: .Range("ä½æ‰€ä¸Šæ®µ") = Left(ComboBox1.Text, InStr(ComboBox1.Text, "ï¼ˆ") - 1)
+            Case Else: .Range("ä½æ‰€ä¸Šæ®µ") = ComboBox1.Text
         End Select
         Unload UserForm1
     End With
