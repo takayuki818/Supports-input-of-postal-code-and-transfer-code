@@ -4,7 +4,6 @@
 ## 操作方法
 入力フォーム画面  
 ![入力フォームサンプル](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/e5229447-7b03-4b92-acda-f96d91bee1b2)
-
 #### 郵便番号入力補助
 「郵便番号・住所入力補助」ボタン押下により↓のユーザーフォームが表示されます  
 ![住所入力・郵便番号自動検索フォーム](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/3d4da891-75f2-49df-81bc-1149326004b5)  
@@ -13,8 +12,6 @@
 自治体名-大字名をドロップダウンリストから選択すると、郵便番号が表示されます。  
 →「決定・代入」ボタン押下で入力フォームに代入します  
 ![郵便番号表示](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/1a56e355-edb4-4224-96f1-5e0ef2d2a94d)  
-
-
 #### 金融機関コード自動入力
 入力フォーム中で、  
 1.「本店名」を入力→本店名コードを自動で検索代入  
