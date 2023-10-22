@@ -7,6 +7,8 @@
 #### 郵便番号入力補助
 「郵便番号・住所入力補助」ボタン押下により↓のユーザーフォームが表示されます  
 ![住所入力・郵便番号自動検索フォーム](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/3d4da891-75f2-49df-81bc-1149326004b5)  
+赤字はオブジェクト名  
+![フォームオブジェクト名](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/13dbb489-a586-4c95-b41c-0638a5ece2f9)  
 自治体名以降の住所漢字を入力すると、前方一致検索によりドロップダウンリストが表示されます  
 ![ドロップダウンリスト](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/315e4cdc-948f-48df-9bfe-24d2b2077750)  
 自治体名-大字名をドロップダウンリストから選択すると、郵便番号が表示されます。  
