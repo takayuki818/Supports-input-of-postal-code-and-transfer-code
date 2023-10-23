@@ -11,35 +11,9 @@ Option Explicit
 Private Sub CommandButton1_Click()
     UserForm1.Show
 End Sub
-Private Sub Worksheet_Change(ByVal Target As Range)
-    Dim 文 As String
-    With Sheets("入力フォーム")
-        Select Case Target.Address
-            Case .Range("本店名").Address
-                .Range("本店名コード") = 本店コード検索(.Range("本店名"))
-            Case .Range("支店名").Address
-                .Range("支店名コード") = 支店コード検索(.Range("本店名コード"), .Range("支店名"))
-        End Select
-    End With
+Private Sub CommandButton2_Click()
+    UserForm2.Show
 End Sub
-Function 本店コード検索(本店名 As String) As String
-    Dim 終行 As Long
-    With Sheets("金融機関コード")
-        終行 = .Cells(Rows.Count, 1).End(xlUp).Row
-        On Error Resume Next
-        本店コード検索 = WorksheetFunction.VLookup(本店名, .Cells(2, 1).Resize(終行 - 1, 2), 2, 0)
-        On Error GoTo 0
-    End With
-End Function
-Function 支店コード検索(本店コード As String, 支店名 As String) As String
-    Dim 終行 As Long
-    With Sheets("金融機関コード")
-        終行 = .Cells(Rows.Count, 4).End(xlUp).Row
-        On Error Resume Next
-        支店コード検索 = WorksheetFunction.VLookup(本店コード & "-" & 支店名, .Cells(2, 4).Resize(終行 - 1, 2), 2, 0)
-        On Error GoTo 0
-    End With
-End Function
 Sub 保護切替()
     With ActiveSheet
         Select Case .ProtectContents
