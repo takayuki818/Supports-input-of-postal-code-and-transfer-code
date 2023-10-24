@@ -4,7 +4,7 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm1
    ClientHeight    =   3120
    ClientLeft      =   120
    ClientTop       =   468
-   ClientWidth     =   6204
+   ClientWidth     =   6216
    OleObjectBlob   =   "UserForm1.frx":0000
    StartUpPosition =   1  'オーナー フォームの中央
 End

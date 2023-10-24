@@ -8,11 +8,42 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Option Explicit
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+    With Sheets("入力フォーム")
+        Select Case Target.Address
+            Case .Range("住所上段").MergeArea.Address
+                If .Range("住所上段") = "" Then UserForm1.Show
+            Case .Range("本店名").Address
+                If .Range("本店名") = "" Then
+                    Call 本店順並替
+                    UserForm2.Show
+                End If
+        End Select
+    End With
+End Sub
 Private Sub CommandButton1_Click()
     UserForm1.Show
 End Sub
 Private Sub CommandButton2_Click()
+    Call 本店順並替
     UserForm2.Show
+End Sub
+Sub 本店順並替()
+    Dim 最下行 As Long, 最右列 As Long
+    With Sheets("金融機関コード")
+        最下行 = .Cells(Rows.Count, 1).End(xlUp).Row
+        最右列 = .Cells(1, Columns.Count).End(xlToLeft).Column
+        .Range(.Cells(1, 1), .Cells(最下行, 最右列)).Characters.PhoneticCharacters = ""
+        With .Sort
+            With .SortFields
+                .Clear
+                .Add Key:=Range("A1"), Order:=xlAscending
+            End With
+            .SetRange Range(Cells(1, 1), Cells(最下行, 最右列))
+            .Header = xlYes
+            .Apply
+        End With
+    End With
 End Sub
 Sub 保護切替()
     With ActiveSheet
@@ -32,3 +63,4 @@ Sub 入力クリア()
         Application.EnableEvents = True
     End With
 End Sub
+

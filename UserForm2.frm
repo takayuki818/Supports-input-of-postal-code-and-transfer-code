@@ -97,12 +97,22 @@ Sub 本店リスト格納()
     End With
     With ListBox1
         .Clear
-        For 行 = 1 To 終行 - 1
-            If 配列(行, 2) Like "*" & TextBox1.Text & "*" Then
-                添字 = 添字 + 1
-                .AddItem ""
-                .List(添字 - 1, 0) = 配列(行, 1)
-                .List(添字 - 1, 1) = 配列(行, 2)
+        '1行目処理
+        If 配列(1, 2) Like "*" & TextBox1.Text & "*" Then
+            添字 = 添字 + 1
+            .AddItem ""
+            .List(0, 0) = 配列(1, 1)
+            .List(0, 1) = 配列(1, 2)
+        End If
+        '2行目以降処理
+        For 行 = 2 To 終行 - 1
+            If 配列(行, 1) <> 配列(行 - 1, 1) Then
+                If 配列(行, 2) Like "*" & TextBox1.Text & "*" Then
+                    添字 = 添字 + 1
+                    .AddItem ""
+                    .List(添字 - 1, 0) = 配列(行, 1)
+                    .List(添字 - 1, 1) = 配列(行, 2)
+                End If
             End If
         Next
         .Visible = True
@@ -112,8 +122,8 @@ Sub 支店リスト格納()
     Dim 終行 As Long, 行 As Long, 添字 As Long
     Dim 配列()
     With Sheets("金融機関コード")
-        終行 = .Cells(Rows.Count, 4).End(xlUp).Row
-        配列 = .Cells(2, 4).Resize(終行 - 1, 3).Value
+        終行 = .Cells(Rows.Count, 2).End(xlUp).Row
+        配列 = .Cells(2, 2).Resize(終行 - 1, 3).Value
     End With
     With ListBox2
         .Clear
@@ -132,8 +142,8 @@ Sub 支店抜粋リスト格納()
     Dim 終行 As Long, 行 As Long, 添字 As Long
     Dim 配列()
     With Sheets("金融機関コード")
-        終行 = .Cells(Rows.Count, 4).End(xlUp).Row
-        配列 = .Cells(2, 4).Resize(終行 - 1, 3).Value
+        終行 = .Cells(Rows.Count, 2).End(xlUp).Row
+        配列 = .Cells(2, 2).Resize(終行 - 1, 3).Value
     End With
     With ListBox2
         .Clear
