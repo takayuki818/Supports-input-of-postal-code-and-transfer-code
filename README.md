@@ -3,19 +3,22 @@
 **注意：サンプルファイル中の郵便番号と金融機関コードのリストは、ある時点で[こちらのサイト](https://www.post.japanpost.jp/zipcode/download.html)等から独自に入手したものです。「内容に誤りが含まれる可能性がある」「最新情報ではない」等のリスクがあることにご留意ください。**
 ## 操作方法
 入力フォーム画面  
-![入力フォームサンプル](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/e5229447-7b03-4b92-acda-f96d91bee1b2)
+![入力フォーム画面](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/2badc5e3-df93-4c25-9551-16c8456a3d74)  
 #### 郵便番号入力補助
-「郵便番号・住所入力補助」ボタン押下により↓のユーザーフォームが表示されます  
-![住所入力・郵便番号自動検索フォーム](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/3d4da891-75f2-49df-81bc-1149326004b5)  
+「郵便番号・住所入力補助」ボタン押下（または「住所上段」セルの選択）により入力補助フォームが表示されます。  
+![UserForm1](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/4ead9bef-2ebf-4ff2-b86a-f160ab728706)  
+自治体名-大字名の一部を入力すると、中間一致検索フィルタ処理により、  
+合致するデータが格納されたリストボックスが表示されます。（サンプル対応範囲：千葉県内）  
+![リストボックス展開](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/53330b7c-b924-4491-8762-7bb86cbfafe7)  
 赤字はオブジェクト名  
-![フォームオブジェクト名](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/13dbb489-a586-4c95-b41c-0638a5ece2f9)  
-自治体名以降の住所漢字を入力すると、前方一致検索によりドロップダウンリストが表示されます  
-![ドロップダウンリスト](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/315e4cdc-948f-48df-9bfe-24d2b2077750)  
-自治体名-大字名をドロップダウンリストから選択すると、郵便番号が表示されます。  
-→「決定・代入」ボタン押下で入力フォームに代入します  
+![オブジェクト配置](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/03baa3e9-2601-4398-90be-896bc50402fb)  
+リストから対象を選択し、「決定」ボタン押下で郵便番号・住所を入力フォームに代入します。  
 ![郵便番号表示](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/1a56e355-edb4-4224-96f1-5e0ef2d2a94d)  
 #### 金融機関コード自動入力
-入力フォーム中で、  
-1.「本店名」を入力→本店名コードを自動で検索代入  
-2.「支店名」を入力→支店名コードを自動で検索代入  
-※支店名コード特定には本店名コードを必要とするため、1→2の順で操作する必要があります。
+「振込先入力補助」ボタン押下（または「本店名」セルの選択）により、同様のユーザーフォームが表示されます。  
+※郵便番号入力補助と同様の操作感となります。
+![UserForm2](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/ac65fbcd-6b4d-4393-9944-253bf7409a20)  
+1.「本店名」を入力　　　→　本店名リストを展開  
+2.本店名リストから選択　→　支店名リストを展開  
+3.「支店名」を入力　　　→　本店コードと合致する支店名から絞り込み  
+※支店の特定には本店情報を必要とするため、先に本店名を特定（リスト選択）する必要が必要があります。
