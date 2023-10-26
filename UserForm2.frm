@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm2 
    Caption         =   "UserForm2"
-   ClientHeight    =   2580
+   ClientHeight    =   3120
    ClientLeft      =   108
    ClientTop       =   456
    ClientWidth     =   7800
@@ -18,6 +18,12 @@ Private Sub UserForm_Initialize()
     With Sheets("“ü—ÍƒtƒH[ƒ€")
         .Range("–{“XƒR[ƒh").ClearContents
         .Range("x“XƒR[ƒh").ClearContents
+    End With
+    With Me
+        .Height = 80
+    End With
+    With CommandButton1
+        .Height = 20.25
     End With
     With TextBox1
         .SetFocus
@@ -39,6 +45,7 @@ Private Sub UserForm_Initialize()
         .ColumnCount = 2
         .ColumnWidths = "38 pt;"
         .TextColumn = 2
+        .Height = 98
     End With
     With ListBox2
         Select Case TextBox2.Text
@@ -50,6 +57,7 @@ Private Sub UserForm_Initialize()
         .ColumnCount = 2
         .ColumnWidths = "33 pt;"
         .TextColumn = 2
+        .Height = 98
     End With
 End Sub
 Private Sub TextBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
@@ -116,6 +124,8 @@ Sub –{“XƒŠƒXƒgŠi”[()
             End If
         Next
         .Visible = True
+        Me.Height = 170
+        CommandButton1.Height = 115
     End With
 End Sub
 Sub x“XƒŠƒXƒgŠi”[()
@@ -136,6 +146,8 @@ Sub x“XƒŠƒXƒgŠi”[()
             End If
         Next
         .Visible = True
+        Me.Height = 170
+        CommandButton1.Height = 115
     End With
 End Sub
 Sub x“X”²ˆƒŠƒXƒgŠi”[()
@@ -158,5 +170,7 @@ Sub x“X”²ˆƒŠƒXƒgŠi”[()
             End If
         Next
         .Visible = True
+        Me.Height = 170
+        CommandButton1.Height = 115
     End With
 End Sub

@@ -19,6 +19,12 @@ Private Sub UserForm_Initialize()
     With Sheets("入力フォーム")
         .Range("郵便番号").ClearContents
     End With
+    With Me
+        .Height = 80
+    End With
+    With CommandButton1
+        .Height = 20.25
+    End With
     With TextBox1
         .SetFocus
         .IMEMode = fmIMEModeHiragana
@@ -28,6 +34,7 @@ Private Sub UserForm_Initialize()
         .ColumnCount = 2
         .TextColumn = 2
         .ColumnWidths = "70 pt;"
+        .Height = 103
         .Visible = False
     End With
 End Sub
@@ -53,12 +60,14 @@ Private Sub TextBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift A
                     End If
                 Next
                 .Visible = True
+                Me.Height = 180
+                CommandButton1.Height = 120
         End Select
     End With
 End Sub
 'リストボックス選択→テキストボックス1に代入
 Private Sub ListBox1_Click()
-    TextBox1 = ListBox1.Text
+    TextBox1.Text = ListBox1.Text
 End Sub
 '入力フォームへ代入
 Private Sub CommandButton1_Click()
@@ -69,6 +78,6 @@ Private Sub CommandButton1_Click()
             Case Is > 0: .Range("住所上段") = Left(TextBox1.Text, InStr(TextBox1.Text, "（") - 1)
             Case Else: .Range("住所上段") = TextBox1.Text
         End Select
-        Unload UserForm1
+        Unload Me
     End With
 End Sub
