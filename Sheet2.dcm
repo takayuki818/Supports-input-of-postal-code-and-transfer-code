@@ -12,21 +12,21 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     With Sheets("“ü—ÍƒtƒH[ƒ€")
         Select Case Target.Address
             Case .Range("ZŠã’i").MergeArea.Address
-                If .Range("ZŠã’i") = "" Then UserForm1.Show
+                If .Range("ZŠã’i") = "" Then ZŠ“ü—Í.Show
             Case .Range("–{“X–¼").Address
                 If .Range("–{“X–¼") = "" Then
                     Call –{“X‡•À‘Ö
-                    UserForm2.Show
+                    Uæ“ü—Í.Show
                 End If
         End Select
     End With
 End Sub
 Private Sub CommandButton1_Click()
-    UserForm1.Show
+    ZŠ“ü—Í.Show
 End Sub
 Private Sub CommandButton2_Click()
     Call –{“X‡•À‘Ö
-    UserForm2.Show
+    Uæ“ü—Í.Show
 End Sub
 Sub –{“X‡•À‘Ö()
     Dim Å‰ºs As Long, Å‰E—ñ As Long

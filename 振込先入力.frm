@@ -1,23 +1,23 @@
 VERSION 5.00
-Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm2 
+Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} Uæ“ü—Í 
    Caption         =   "UserForm2"
    ClientHeight    =   3120
    ClientLeft      =   108
    ClientTop       =   456
    ClientWidth     =   7800
-   OleObjectBlob   =   "UserForm2.frx":0000
-   StartUpPosition =   1  'ã‚ªãƒ¼ãƒŠãƒ¼ ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸­å¤®
+   OleObjectBlob   =   "Uæ“ü—Í.frx":0000
+   StartUpPosition =   1  'ƒI[ƒi[ ƒtƒH[ƒ€‚Ì’†‰›
 End
-Attribute VB_Name = "UserForm2"
+Attribute VB_Name = "Uæ“ü—Í"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Private Sub UserForm_Initialize()
-    With Sheets("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ")
-        .Range("æœ¬åº—ã‚³ãƒ¼ãƒ‰").ClearContents
-        .Range("æ”¯åº—ã‚³ãƒ¼ãƒ‰").ClearContents
+    With Sheets("“ü—ÍƒtƒH[ƒ€")
+        .Range("–{“XƒR[ƒh").ClearContents
+        .Range("x“XƒR[ƒh").ClearContents
     End With
     With Me
         .Height = 80
@@ -28,19 +28,19 @@ Private Sub UserForm_Initialize()
     With TextBox1
         .SetFocus
         .IMEMode = fmIMEModeHiragana
-        .ControlSource = "å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ !æœ¬åº—å"
+        .ControlSource = "“ü—ÍƒtƒH[ƒ€!–{“X–¼"
     End With
     With TextBox2
         .IMEMode = fmIMEModeHiragana
-        .ControlSource = "å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ !æ”¯åº—å"
+        .ControlSource = "“ü—ÍƒtƒH[ƒ€!x“X–¼"
     End With
     With ListBox1
         Select Case TextBox1.Text
             Case "": .Visible = False
             Case Else
                 .Visible = True
-                Call æœ¬åº—ãƒªã‚¹ãƒˆæ ¼ç´
-                Call æ”¯åº—ãƒªã‚¹ãƒˆæ ¼ç´
+                Call –{“XƒŠƒXƒgŠi”[
+                Call x“XƒŠƒXƒgŠi”[
         End Select
         .ColumnCount = 2
         .ColumnWidths = "38 pt;"
@@ -52,7 +52,7 @@ Private Sub UserForm_Initialize()
             Case "": .Visible = False
             Case Else
                 .Visible = True
-                Call æ”¯åº—æŠœç²‹ãƒªã‚¹ãƒˆæ ¼ç´
+                Call x“X”²ˆƒŠƒXƒgŠi”[
         End Select
         .ColumnCount = 2
         .ColumnWidths = "33 pt;"
@@ -63,63 +63,63 @@ End Sub
 Private Sub TextBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
     With ListBox1
         Select Case KeyCode
-            '28:å¤‰æ›ã‚­ãƒ¼ã€29:ç„¡å¤‰æ›ã‚­ãƒ¼ï¼ˆå®šæ•°ãªã—ï¼‰
-            Case 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
-                Call æœ¬åº—ãƒªã‚¹ãƒˆæ ¼ç´
+            '28:•ÏŠ·ƒL[A29:–³•ÏŠ·ƒL[i’è”‚È‚µj
+            Case vbKeyReturn, 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
+                Call –{“XƒŠƒXƒgŠi”[
         End Select
     End With
 End Sub
 Private Sub ListBox1_Click()
     TextBox1.Text = ListBox1.Text
     TextBox2.SetFocus
-    Call æ”¯åº—ãƒªã‚¹ãƒˆæ ¼ç´
+    Call x“XƒŠƒXƒgŠi”[
 End Sub
 Private Sub TextBox2_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
     With ListBox2
         Select Case KeyCode
-            '28:å¤‰æ›ã‚­ãƒ¼ã€29:ç„¡å¤‰æ›ã‚­ãƒ¼ï¼ˆå®šæ•°ãªã—ï¼‰
-            Case 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
-            Call æ”¯åº—æŠœç²‹ãƒªã‚¹ãƒˆæ ¼ç´
+            '28:•ÏŠ·ƒL[A29:–³•ÏŠ·ƒL[i’è”‚È‚µj
+            Case vbKeyReturn, 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
+            Call x“X”²ˆƒŠƒXƒgŠi”[
         End Select
     End With
 End Sub
 Private Sub ListBox2_Click()
     TextBox2.Text = ListBox2.Text
 End Sub
-'å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã¸ä»£å…¥
+'“ü—ÍƒtƒH[ƒ€‚Ö‘ã“ü
 Private Sub CommandButton1_Click()
-    With Sheets("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ")
+    With Sheets("“ü—ÍƒtƒH[ƒ€")
         ListBox1.TextColumn = 1
-        .Range("æœ¬åº—ã‚³ãƒ¼ãƒ‰") = ListBox1.Text
+        .Range("–{“XƒR[ƒh") = ListBox1.Text
         ListBox2.TextColumn = 1
-        .Range("æ”¯åº—ã‚³ãƒ¼ãƒ‰") = ListBox2.Text
-        Unload UserForm2
+        .Range("x“XƒR[ƒh") = ListBox2.Text
+        Unload Me
     End With
 End Sub
-Sub æœ¬åº—ãƒªã‚¹ãƒˆæ ¼ç´()
-    Dim çµ‚è¡Œ As Long, è¡Œ As Long, æ·»å­— As Long
-    Dim é…åˆ—()
-    With Sheets("é‡‘èæ©Ÿé–¢ã‚³ãƒ¼ãƒ‰")
-        çµ‚è¡Œ = .Cells(Rows.Count, 1).End(xlUp).Row
-        é…åˆ— = .Cells(2, 1).Resize(çµ‚è¡Œ - 1, 2).Value
+Sub –{“XƒŠƒXƒgŠi”[()
+    Dim Is As Long, s As Long, “Yš As Long
+    Dim ”z—ñ()
+    With Sheets("‹à—Z‹@ŠÖƒR[ƒh")
+        Is = .Cells(Rows.Count, 1).End(xlUp).Row
+        ”z—ñ = .Cells(2, 1).Resize(Is - 1, 2).Value
     End With
     With ListBox1
         .Clear
-        '1è¡Œç›®å‡¦ç†
-        If é…åˆ—(1, 2) Like "*" & TextBox1.Text & "*" Then
-            æ·»å­— = æ·»å­— + 1
+        '1s–Úˆ—
+        If ”z—ñ(1, 2) Like "*" & TextBox1.Text & "*" Then
+            “Yš = “Yš + 1
             .AddItem ""
-            .List(0, 0) = é…åˆ—(1, 1)
-            .List(0, 1) = é…åˆ—(1, 2)
+            .List(0, 0) = ”z—ñ(1, 1)
+            .List(0, 1) = ”z—ñ(1, 2)
         End If
-        '2è¡Œç›®ä»¥é™å‡¦ç†
-        For è¡Œ = 2 To çµ‚è¡Œ - 1
-            If é…åˆ—(è¡Œ, 1) <> é…åˆ—(è¡Œ - 1, 1) Then
-                If é…åˆ—(è¡Œ, 2) Like "*" & TextBox1.Text & "*" Then
-                    æ·»å­— = æ·»å­— + 1
+        '2s–ÚˆÈ~ˆ—
+        For s = 2 To Is - 1
+            If ”z—ñ(s, 1) <> ”z—ñ(s - 1, 1) Then
+                If ”z—ñ(s, 2) Like "*" & TextBox1.Text & "*" Then
+                    “Yš = “Yš + 1
                     .AddItem ""
-                    .List(æ·»å­— - 1, 0) = é…åˆ—(è¡Œ, 1)
-                    .List(æ·»å­— - 1, 1) = é…åˆ—(è¡Œ, 2)
+                    .List(“Yš - 1, 0) = ”z—ñ(s, 1)
+                    .List(“Yš - 1, 1) = ”z—ñ(s, 2)
                 End If
             End If
         Next
@@ -128,21 +128,21 @@ Sub æœ¬åº—ãƒªã‚¹ãƒˆæ ¼ç´()
         CommandButton1.Height = 115
     End With
 End Sub
-Sub æ”¯åº—ãƒªã‚¹ãƒˆæ ¼ç´()
-    Dim çµ‚è¡Œ As Long, è¡Œ As Long, æ·»å­— As Long
-    Dim é…åˆ—()
-    With Sheets("é‡‘èæ©Ÿé–¢ã‚³ãƒ¼ãƒ‰")
-        çµ‚è¡Œ = .Cells(Rows.Count, 2).End(xlUp).Row
-        é…åˆ— = .Cells(2, 2).Resize(çµ‚è¡Œ - 1, 3).Value
+Sub x“XƒŠƒXƒgŠi”[()
+    Dim Is As Long, s As Long, “Yš As Long
+    Dim ”z—ñ()
+    With Sheets("‹à—Z‹@ŠÖƒR[ƒh")
+        Is = .Cells(Rows.Count, 2).End(xlUp).Row
+        ”z—ñ = .Cells(2, 2).Resize(Is - 1, 3).Value
     End With
     With ListBox2
         .Clear
-        For è¡Œ = 1 To çµ‚è¡Œ - 1
-            If é…åˆ—(è¡Œ, 1) = TextBox1.Text Then
-                æ·»å­— = æ·»å­— + 1
+        For s = 1 To Is - 1
+            If ”z—ñ(s, 1) = TextBox1.Text Then
+                “Yš = “Yš + 1
                 .AddItem ""
-                .List(æ·»å­— - 1, 0) = é…åˆ—(è¡Œ, 2)
-                .List(æ·»å­— - 1, 1) = é…åˆ—(è¡Œ, 3)
+                .List(“Yš - 1, 0) = ”z—ñ(s, 2)
+                .List(“Yš - 1, 1) = ”z—ñ(s, 3)
             End If
         Next
         .Visible = True
@@ -150,22 +150,22 @@ Sub æ”¯åº—ãƒªã‚¹ãƒˆæ ¼ç´()
         CommandButton1.Height = 115
     End With
 End Sub
-Sub æ”¯åº—æŠœç²‹ãƒªã‚¹ãƒˆæ ¼ç´()
-    Dim çµ‚è¡Œ As Long, è¡Œ As Long, æ·»å­— As Long
-    Dim é…åˆ—()
-    With Sheets("é‡‘èæ©Ÿé–¢ã‚³ãƒ¼ãƒ‰")
-        çµ‚è¡Œ = .Cells(Rows.Count, 2).End(xlUp).Row
-        é…åˆ— = .Cells(2, 2).Resize(çµ‚è¡Œ - 1, 3).Value
+Sub x“X”²ˆƒŠƒXƒgŠi”[()
+    Dim Is As Long, s As Long, “Yš As Long
+    Dim ”z—ñ()
+    With Sheets("‹à—Z‹@ŠÖƒR[ƒh")
+        Is = .Cells(Rows.Count, 2).End(xlUp).Row
+        ”z—ñ = .Cells(2, 2).Resize(Is - 1, 3).Value
     End With
     With ListBox2
         .Clear
-        For è¡Œ = 1 To çµ‚è¡Œ - 1
-            If é…åˆ—(è¡Œ, 1) = TextBox1.Text Then
-                If é…åˆ—(è¡Œ, 3) Like "*" & TextBox2.Text & "*" Then
-                    æ·»å­— = æ·»å­— + 1
+        For s = 1 To Is - 1
+            If ”z—ñ(s, 1) = TextBox1.Text Then
+                If ”z—ñ(s, 3) Like "*" & TextBox2.Text & "*" Then
+                    “Yš = “Yš + 1
                     .AddItem ""
-                    .List(æ·»å­— - 1, 0) = é…åˆ—(è¡Œ, 2)
-                    .List(æ·»å­— - 1, 1) = é…åˆ—(è¡Œ, 3)
+                    .List(“Yš - 1, 0) = ”z—ñ(s, 2)
+                    .List(“Yš - 1, 1) = ”z—ñ(s, 3)
                 End If
             End If
         Next

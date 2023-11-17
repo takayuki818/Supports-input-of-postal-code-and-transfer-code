@@ -1,23 +1,23 @@
 VERSION 5.00
-Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm1 
+Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} ZŠ“ü—Í 
    Caption         =   "UserForm1"
    ClientHeight    =   3120
    ClientLeft      =   120
    ClientTop       =   468
    ClientWidth     =   6216
-   OleObjectBlob   =   "UserForm1.frx":0000
-   StartUpPosition =   1  'ã‚ªãƒ¼ãƒŠãƒ¼ ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸­å¤®
+   OleObjectBlob   =   "ZŠ“ü—Í.frx":0000
+   StartUpPosition =   1  'ƒI[ƒi[ ƒtƒH[ƒ€‚Ì’†‰›
 End
-Attribute VB_Name = "UserForm1"
+Attribute VB_Name = "ZŠ“ü—Í"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-'ãƒ•ã‚©ãƒ¼ãƒ åˆæœŸåŒ–è¨­å®š
+'ƒtƒH[ƒ€‰Šú‰»İ’è
 Private Sub UserForm_Initialize()
-    With Sheets("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ")
-        .Range("éƒµä¾¿ç•ªå·").ClearContents
+    With Sheets("“ü—ÍƒtƒH[ƒ€")
+        .Range("—X•Ö”Ô†").ClearContents
     End With
     With Me
         .Height = 80
@@ -28,7 +28,7 @@ Private Sub UserForm_Initialize()
     With TextBox1
         .SetFocus
         .IMEMode = fmIMEModeHiragana
-        .ControlSource = "å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ !ä½æ‰€ä¸Šæ®µ"
+        .ControlSource = "“ü—ÍƒtƒH[ƒ€!ZŠã’i"
     End With
     With ListBox1
         .ColumnCount = 2
@@ -38,25 +38,25 @@ Private Sub UserForm_Initialize()
         .Visible = False
     End With
 End Sub
-'ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã‚’ä½œæˆãƒ»è¡¨ç¤º
+'ƒŠƒXƒgƒ{ƒbƒNƒX‚ğì¬E•\¦
 Private Sub TextBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
-    Dim çµ‚è¡Œ As Long, è¡Œ As Long, æ·»å­— As Long
-    Dim é…åˆ—()
-    With Sheets("éƒµä¾¿ç•ªå·ä¸€è¦§")
-        çµ‚è¡Œ = .Cells(Rows.Count, 1).End(xlUp).Row
-        é…åˆ— = .Cells(2, 1).Resize(çµ‚è¡Œ - 1, 2).Value
+    Dim Is As Long, s As Long, “Yš As Long
+    Dim ”z—ñ()
+    With Sheets("—X•Ö”Ô†ˆê——")
+        Is = .Cells(Rows.Count, 1).End(xlUp).Row
+        ”z—ñ = .Cells(2, 1).Resize(Is - 1, 2).Value
     End With
     With ListBox1
         Select Case KeyCode
-            '28:å¤‰æ›ã‚­ãƒ¼ã€29:ç„¡å¤‰æ›ã‚­ãƒ¼ï¼ˆå®šæ•°ãªã—ï¼‰
-            Case 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
+            '28:•ÏŠ·ƒL[A29:–³•ÏŠ·ƒL[i’è”‚È‚µj
+            Case vbKeyReturn, 28, 29, vbKeyBack, vbKeySpace, vbKeyDelete, vbKeyA To vbKeyZ, vbKey0 To vbKey9, vbKeyNumpad0 To vbKeyNumpad9
                 .Clear
-                For è¡Œ = 1 To çµ‚è¡Œ - 1
-                    If é…åˆ—(è¡Œ, 2) Like "*" & TextBox1.Text & "*" Then
-                        æ·»å­— = æ·»å­— + 1
+                For s = 1 To Is - 1
+                    If ”z—ñ(s, 2) Like "*" & TextBox1.Text & "*" Then
+                        “Yš = “Yš + 1
                         .AddItem ""
-                        .List(æ·»å­— - 1, 0) = é…åˆ—(è¡Œ, 1)
-                        .List(æ·»å­— - 1, 1) = é…åˆ—(è¡Œ, 2)
+                        .List(“Yš - 1, 0) = ”z—ñ(s, 1)
+                        .List(“Yš - 1, 1) = ”z—ñ(s, 2)
                     End If
                 Next
                 .Visible = True
@@ -65,18 +65,18 @@ Private Sub TextBox1_KeyUp(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift A
         End Select
     End With
 End Sub
-'ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹é¸æŠâ†’ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹1ã«ä»£å…¥
+'ƒŠƒXƒgƒ{ƒbƒNƒX‘I‘ğ¨ƒeƒLƒXƒgƒ{ƒbƒNƒX1‚É‘ã“ü
 Private Sub ListBox1_Click()
     TextBox1.Text = ListBox1.Text
 End Sub
-'å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã¸ä»£å…¥
+'“ü—ÍƒtƒH[ƒ€‚Ö‘ã“ü
 Private Sub CommandButton1_Click()
-    With Sheets("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ")
+    With Sheets("“ü—ÍƒtƒH[ƒ€")
         ListBox1.TextColumn = 1
-        .Range("éƒµä¾¿ç•ªå·") = ListBox1.Text
-        Select Case InStr(TextBox1.Text, "ï¼ˆ")
-            Case Is > 0: .Range("ä½æ‰€ä¸Šæ®µ") = Left(TextBox1.Text, InStr(TextBox1.Text, "ï¼ˆ") - 1)
-            Case Else: .Range("ä½æ‰€ä¸Šæ®µ") = TextBox1.Text
+        .Range("—X•Ö”Ô†") = ListBox1.Text
+        Select Case InStr(TextBox1.Text, "i")
+            Case Is > 0: .Range("ZŠã’i") = Left(TextBox1.Text, InStr(TextBox1.Text, "i") - 1)
+            Case Else: .Range("ZŠã’i") = TextBox1.Text
         End Select
         Unload Me
     End With
