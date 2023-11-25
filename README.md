@@ -1,14 +1,14 @@
 # Name
 郵便番号・住所入力補助フォーム例（千葉県内郵便番号対応）.xlsm
-# Note
+## Note
 **注意：サンプルファイル中の郵便番号と金融機関コードのリストは、ある時点で[こちらのサイト](https://www.post.japanpost.jp/zipcode/download.html)等から独自に入手したものです。「内容に誤りが含まれる可能性がある」「最新情報ではない」等のリスクがあることにご留意ください。**
-# Overview
+## Overview
 「住所・郵便番号」及び「振込先銀行名・コード」の入力補助フォームの実装サンプルです。
-# Usage
-## 操作方法
+## Usage
+### 操作方法
 入力フォーム画面  
 ![入力フォーム画面](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/2badc5e3-df93-4c25-9551-16c8456a3d74)  
-### 郵便番号入力補助
+#### 郵便番号入力補助
 「郵便番号・住所入力補助」ボタン押下（または「住所上段」セルの選択）により入力補助フォームが表示されます。  
 ![UserForm1](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/3ed9aeda-8f9b-441d-aa6b-badaf272a39c)
 自治体名-大字名の一部を入力すると、中間一致検索フィルタ処理により、  
@@ -17,7 +17,7 @@
 赤字はオブジェクト名  
 ![オブジェクト配置](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/03baa3e9-2601-4398-90be-896bc50402fb)  
 リストから対象を選択し、「決定」ボタン押下で郵便番号・住所を入力フォームに代入します。  
-### 金融機関コード自動入力
+#### 金融機関コード自動入力
 「振込先入力補助」ボタン押下（または「本店名」セルの選択）により、同様のユーザーフォームが表示されます。  
 ※郵便番号入力補助と同様の操作感となります。
 ![UserForm2](https://github.com/takayuki818/Supports-input-of-postal-code-and-transfer-code/assets/147408435/ac65fbcd-6b4d-4393-9944-253bf7409a20)  
